@@ -31,6 +31,7 @@ module.exports = {
         },
     },
     solidity: {
+        // we can also add more than one solidity compilers
         compilers: [
             {
                 version: "0.8.7",
