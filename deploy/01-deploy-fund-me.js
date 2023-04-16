@@ -35,6 +35,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     })
     log(`FundMe deployed at ${fundMe.address}`)
 
+    // we don't need to verify in local chain
     if (
         !developmentChains.includes(network.name) &&
         process.env.ETHERSCAN_API_KEY

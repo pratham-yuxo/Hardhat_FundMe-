@@ -1,9 +1,10 @@
-// 10:44
+// 11:12
 // Why this file
 // like rinkeby sepolia have their own price feed contract but our local chain
 // or hardhat doesn't have this. So, we are deploying our own mock pricefeed contract
 
 const { network } = require("hardhat")
+
 // const { developmentChains } = require("../helper-hardhat-config")
 const DECIMALS = "8"
 const INITIAL_PRICE = "200000000000" // 2000
@@ -11,7 +12,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments
     const { deployer } = await getNamedAccounts()
     const chainId = network.config.chainId
-    console.log(chainId)
+
     // If we are on a local development network, we need to deploy mocks!
     if (chainId == 31337) {
         log("Local network detected! Deploying mocks...")
